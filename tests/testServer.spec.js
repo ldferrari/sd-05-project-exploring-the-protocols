@@ -18,7 +18,7 @@ function wait(time) {
     }
   }
 
-describe('4 - Criar um túnel através do Ngrok', () => {
+describe.skip('4 - Criar um túnel através do Ngrok', () => {
   it('Será validado se os comandos estão dentro do arquivo instruction.json', async () => {
     const instruction = fs.readFileSync('./instruction.json', 'utf8');
     const instructionJson = JSON.parse(instruction.toString());
@@ -32,7 +32,7 @@ describe('4 - Criar um túnel através do Ngrok', () => {
   });
 });
 
-describe.skip('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
+describe('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
   it('Será validado que foi configurada a chamada do `iplocation`', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
