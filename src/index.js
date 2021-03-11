@@ -1,3 +1,4 @@
+// Com ajuda do repo do Felipão
 const net = require('net');
 
 const { getLocationInfos } = require('./location');
