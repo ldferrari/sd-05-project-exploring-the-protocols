@@ -4,7 +4,7 @@ const options = {
   hostname: 'iplocation.com',
   port: 443,
   path: '/',
-  method: POST,
+  method: 'POST',
   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 };
 
