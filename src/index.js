@@ -20,16 +20,20 @@ const server = net.createServer((socket) => {
     const clientIP = null;
 
     getLocationInfos(clientIP, (locationData) => {
+      const r = '<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8">';
       socket.write(startOfResponse);
-      socket.write('<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8">');
+      socket.write(r);
       socket.write('<title>Trybe 🚀</title></head><body>');
       socket.write('<H1>Explorando os Protocolos 🧐🔎</H1>');
-      socket.write('<iframe src="https://giphy.com/embed/l3q2zVr6cu95nF6O4" width="480" height="236" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
+      socket.write('');
       socket.write('</body></html>');
       socket.write(endOfResponse);
     });
   });
 });
+
+<iframe src="https://giphy.com/embed/l3q2zVr6cu95nF6O4" width="480" height="236"
+frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 server.listen(8080);
 */
