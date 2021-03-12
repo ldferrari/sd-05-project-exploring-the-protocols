@@ -15,7 +15,7 @@ const startOfResponse = `${[
   'Content-Type: text/html; charset=UTF-8',
 ].join('\r\n')}\r\n\r\n`;
 
-const endOfResponse = `${[].join('\r\n')}\r\n\r\n`;;
+const endOfResponse = `${[].join('\r\n')}\r\n\r\n`;
 
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
