@@ -44,7 +44,7 @@ describe.skip('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
   });
 });
 
-describe('6 - Adicionar a estrutura de início de requisição HTTP', () => {
+describe.skip('6 - Adicionar a estrutura de início de requisição HTTP', () => {
   it('Será validado que foi adicionado a estrutura da requisição no startOfResponse', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
@@ -52,7 +52,7 @@ describe('6 - Adicionar a estrutura de início de requisição HTTP', () => {
   });
 });
 
-describe.skip('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
+describe('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
   it('Será validado que foi adicionado a estrutura da requisição no endOfResponse', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
