@@ -52,7 +52,7 @@ describe.skip('6 - Adicionar a estrutura de início de requisição HTTP', () =>
   });
 });
 
-describe('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
+describe.skip('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
   it('Será validado que foi adicionado a estrutura da requisição no endOfResponse', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
@@ -68,7 +68,7 @@ describe.skip('8 - Identificar o endereço de IP do client', () => {
   });
 });
 
-describe.skip('9 - Configurar a request HTTPS para enviar o endereço IP', () => {
+describe('9 - Configurar a request HTTPS para enviar o endereço IP', () => {
   it('Será validado que foi adicionado a request no arquivo location', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
