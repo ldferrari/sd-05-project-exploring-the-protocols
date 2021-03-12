@@ -20,6 +20,7 @@ const endOfResponse = `${[].join('\r\n')}\r\n\r\n`;;
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
     const clientIP = getHeaderValue(data.toString(), 'X-Forwarded-For');
+    // console.log(clientIP);
 
     getLocationInfos(clientIP, (locationData) => {
       socket.write(startOfResponse);

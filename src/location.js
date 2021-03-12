@@ -26,6 +26,7 @@ const getLocationInfos = (clientIP, cb) => {
     console.error(e);
   });
 
+  // request HTTPS para enviar o endereço IP,ip=CLIENT_IP, req9 feito no plantão anteriormente
   // TO DO: Enviar mensagem (IP) ao server
   req.write(`ip=${clientIP}`);
 
