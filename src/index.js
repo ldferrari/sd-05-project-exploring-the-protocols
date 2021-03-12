@@ -13,11 +13,9 @@ const getHeaderValue = (data, header) => {
 const startOfResponse = `${[
   'HTTP/1.1 200 OK',
   'Content-Type: text/html; charset=UTF-8',
-  '',
-  '<H1>Protocolos</H1>',
 ].join('\r\n')}\r\n\r\n`;
 
-const endOfResponse = null;
+const endOfResponse = `${[].join('\r\n')}\r\n\r\n`;;
 
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
