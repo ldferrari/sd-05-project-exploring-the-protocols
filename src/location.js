@@ -3,7 +3,7 @@ const https = require('https');
 const options = {
   // chamada HTTPS à API iplocation
   hostname: 'iplocation.com',
-  // padrão HTTPS
+  // padrão HTTPS <https://docs.microsoft.com/pt-br/mem/configmgr/core/plan-design/hierarchy/ports>
   port: 443,
   path: '/',
   method: 'POST',

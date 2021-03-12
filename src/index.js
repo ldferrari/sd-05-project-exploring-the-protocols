@@ -10,7 +10,12 @@ const getHeaderValue = (data, header) => {
   return headerData.split(': ').pop();
 };
 
-const startOfResponse = null;
+const startOfResponse = `${[
+  'HTTP/1.1 200 OK',
+  'Content-Type: text/html; charset=UTF-8',
+  '',
+  '<H1>Protocolos</H1>',
+].join('\r\n')}\r\n\r\n`;
 
 const endOfResponse = null;
 
