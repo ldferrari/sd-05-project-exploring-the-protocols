@@ -19,7 +19,7 @@ function wait(time) {
   }
 
 describe('4 - Criar um túnel através do Ngrok', () => {
-  it('Será validado se os comandos estão dentro do arquivo instruction.json', async () => {
+  it.skip('Será validado se os comandos estão dentro do arquivo instruction.json', async () => {
     const instruction = fs.readFileSync('./instruction.json', 'utf8');
     const instructionJson = JSON.parse(instruction.toString());
     expect(instructionJson.linkSetup).toContain('https://dashboard.ngrok.com/get-started/setup');
@@ -33,7 +33,7 @@ describe('4 - Criar um túnel através do Ngrok', () => {
 });
 
 describe('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
-  it.skip('Será validado que foi configurada a chamada do `iplocation`', async () => {
+  it('Será validado que foi configurada a chamada do `iplocation`', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
     expect(locationString).toContain("hostname: 'iplocation.com'");
