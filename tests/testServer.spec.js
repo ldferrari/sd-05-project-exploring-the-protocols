@@ -32,7 +32,7 @@ describe.skip('4 - Criar um túnel através do Ngrok', () => {
   });
 });
 
-describe('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
+describe.skip('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
   it('Será validado que foi configurada a chamada do `iplocation`', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
@@ -44,7 +44,7 @@ describe('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
   });
 });
 
-describe.skip('6 - Adicionar a estrutura de início de requisição HTTP', () => {
+describe('6 - Adicionar a estrutura de início de requisição HTTP', () => {
   it('Será validado que foi adicionado a estrutura da requisição no startOfResponse', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
