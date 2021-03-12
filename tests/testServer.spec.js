@@ -33,7 +33,7 @@ describe('4 - Criar um túnel através do Ngrok', () => {
 });
 
 describe('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
-  it('Será validado que foi configurada a chamada do `iplocation`', async () => {
+  it.skip('Será validado que foi configurada a chamada do `iplocation`', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
     expect(locationString).toContain("hostname: 'iplocation.com'");
@@ -61,7 +61,7 @@ describe('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
 });
 
 describe('8 - Identificar o endereço de IP do client', () => {
-  it.skip('Será validado que foi adicionado o código para pegar endereço de IP', async () => {
+  it('Será validado que foi adicionado o código para pegar endereço de IP', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
     expect(locationString).toContain("getHeaderValue(data.toString(), 'X-Forwarded-For');");
