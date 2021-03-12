@@ -25,7 +25,7 @@ describe('3 - Criar um server TCP utilizando o módulo net capaz de responder co
     await browser.close();
   });
 
-  it.skip('Será validado que ao fazer a request e acessar a url irá mostrar o texto "Protocolos"', async () => {
+  it('Será validado que ao fazer a request e acessar a url irá mostrar o texto "Protocolos"', async () => {
     var execNode = execTerminal('node exploiters/httpServer.js');
     execNode.stdout.on('data', ()=>{ });
 
