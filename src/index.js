@@ -1,7 +1,7 @@
 const net = require('net');
 const fs = require('fs');
-
 const { getLocationInfos } = require('./location');
+
 let template = '';
 
 fs.readFile(`${__dirname}/template.tpt`, 'utf8', (err, data) => {
@@ -41,4 +41,3 @@ const server = net.createServer((socket) => {
 });
 
 server.listen(8080);
-
