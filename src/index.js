@@ -8,15 +8,23 @@ const getHeaderValue = (data, header) => {
   return headerData.split(': ').pop();
 };
 
-const startOfResponse = null;
+const startOfResponse = 'HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n';
 
-const endOfResponse = null;
+const endOfResponse = '\r\n\r\n';
 
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
-    const clientIP = null;
+    const clientIP = getHeaderValue(data.toString(), 'X-Forwarded-For');
+    const wat = getHeaderValue(data.toString(), 'User-Agent');
 
     getLocationInfos(clientIP, (locationData) => {
+      const {
+        city,
+        postal_code: postalCode,
+        region,
+        country_name: countryName,
+        company,
+      } = locationData;
       socket.write(startOfResponse);
       socket.write(
         '<html><head><meta http-equiv="content-type" content="text/html;charset=utf-8">'
@@ -26,6 +34,13 @@ const server = net.createServer((socket) => {
       socket.write(
         '<iframe src="https://giphy.com/embed/l3q2zVr6cu95nF6O4" width="480" height="236" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>'
       );
+      socket.write(`<h2 data-testid="ip">${clientIP}</h2>`);
+      socket.write(`<p data-testid="city">${city}</p>`);
+      socket.write(`<p data-testid="postal_code">${postalCode}</p>`);
+      socket.write(`<p data-testid="region">${region}</p>`);
+      socket.write(`<p data-testid="country">${countryName}</p>`);
+      socket.write(`<p data-testid="company">${company}</p>`);
+      socket.write(`<p data-testid="device">${wat}</p>`);
       socket.write('</body></html>');
       socket.write(endOfResponse);
     });
