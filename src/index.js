@@ -15,7 +15,7 @@ const endOfResponse = '\r\n\r\n';
 
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
-    const clientIP = getHeaderValue(data.toString(), 'Host');
+    const clientIP = getHeaderValue(data.toString(), 'X-Forwarded-For');
     getLocationInfos(clientIP, (locationData) => {
       console.log(locationData);
       socket.write(startOfResponse);
