@@ -1,4 +1,4 @@
-const https = require('https');
+/*const https = require('https');
 
 const options = {
   hostname: 'iplocation.com',
@@ -33,3 +33,4 @@ const getLocationInfos = (clientIP, cb) => {
 module.exports = {
   getLocationInfos,
 };
+*/
