@@ -33,7 +33,7 @@ describe('4 - Criar um túnel através do Ngrok', () => {
 });
 
 describe('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
-  it.skip('Será validado que foi configurada a chamada do `iplocation`', async () => {
+  it('Será validado que foi configurada a chamada do `iplocation`', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
     expect(locationString).toContain("hostname: 'iplocation.com'");
@@ -45,7 +45,7 @@ describe('5 - Configurar uma chamada HTTPS à API `iplocation`', () => {
 });
 
 describe('6 - Adicionar a estrutura de início de requisição HTTP', () => {
-  it.skip('Será validado que foi adicionado a estrutura da requisição no startOfResponse', async () => {
+  it('Será validado que foi adicionado a estrutura da requisição no startOfResponse', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
     expect(locationString).toContain("HTTP/1.1 200 OK\\r\\nContent-Type: text/html; charset=UTF-8\\r\\n\\r\\n");
@@ -53,7 +53,7 @@ describe('6 - Adicionar a estrutura de início de requisição HTTP', () => {
 });
 
 describe('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
-  it.skip('Será validado que foi adicionado a estrutura da requisição no endOfResponse', async () => {
+  it('Será validado que foi adicionado a estrutura da requisição no endOfResponse', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
     expect(locationString).toContain("\\r\\n\\r\\n");
@@ -61,7 +61,7 @@ describe('7 - Adicionar a estrutura de fim da requisição HTTP', () => {
 });
 
 describe('8 - Identificar o endereço de IP do client', () => {
-  it.skip('Será validado que foi adicionado o código para pegar endereço de IP', async () => {
+  it('Será validado que foi adicionado o código para pegar endereço de IP', async () => {
     const location = fs.readFileSync('./src/index.js', 'utf8');
     const locationString = location.toString();
     expect(locationString).toContain("getHeaderValue(data.toString(), 'X-Forwarded-For');");
@@ -69,7 +69,7 @@ describe('8 - Identificar o endereço de IP do client', () => {
 });
 
 describe('9 - Configurar a request HTTPS para enviar o endereço IP', () => {
-  it.skip('Será validado que foi adicionado a request no arquivo location', async () => {
+  it('Será validado que foi adicionado a request no arquivo location', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
     expect(locationString).toContain("req.write(`ip=${clientIP}`);");
@@ -77,7 +77,7 @@ describe('9 - Configurar a request HTTPS para enviar o endereço IP', () => {
 });
 
 describe('10 - Responder o IP do client', () => {
-  it.skip('Será validado que ao acessar a url sera possível visualizar o ip do client', async () => {
+  it('Será validado que ao acessar a url sera possível visualizar o ip do client', async () => {
     const instructions = fs.readFileSync('./instruction.json', 'utf8');
     const instructionsString = JSON.parse(instructions.toString());
     await ngrok.authtoken(instructionsString.token);
@@ -109,7 +109,7 @@ describe('10 - Responder o IP do client', () => {
 });
 
 describe('11 - Responder informações extraídas através do IP do client', () => {
-  it.skip('Será validado que as informações da localização do cliente serão exibidas na tela', async () => {
+  it('Será validado que as informações da localização do cliente serão exibidas na tela', async () => {
     const instructions = fs.readFileSync('./instruction.json', 'utf8');
     const instructionsString = JSON.parse(instructions.toString());
     await ngrok.authtoken(instructionsString.token);
