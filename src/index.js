@@ -1,4 +1,4 @@
-/* const net = require('net');
+const net = require('net');
 
 const { getLocationInfos } = require('./location');
 
@@ -10,9 +10,9 @@ const getHeaderValue = (data, header) => {
   return headerData.split(': ').pop();
 };
 
-const startOfResponse = null;
+const startOfResponse = 'HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\n\r\n';
 
-const endOfResponse = null;
+const endOfResponse = '\r\n\r\n';
 
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
@@ -33,4 +33,3 @@ const server = net.createServer((socket) => {
 });
 
 server.listen(8080);
- */
