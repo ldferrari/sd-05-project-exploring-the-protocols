@@ -68,7 +68,7 @@ describe('8 - Identificar o endereço de IP do client', () => {
   });
 });
 
-describe('9 - Configurar a request HTTPS para enviar o endereço IP', () => {
+describe.only('9 - Configurar a request HTTPS para enviar o endereço IP', () => {
   it('Será validado que foi adicionado a request no arquivo location', async () => {
     const location = fs.readFileSync('./src/location.js', 'utf8');
     const locationString = location.toString();
