@@ -17,7 +17,6 @@ const getLocationInfos = (clientIP, cb) => {
       console.log(locationData);
 
       cb(locationData);
-
     });
   });
 
