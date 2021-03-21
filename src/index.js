@@ -1,3 +1,4 @@
+const os = require('os');
 const net = require('net');
 
 const { getLocationInfos } = require('./location');
@@ -33,6 +34,9 @@ const server = net.createServer((socket) => {
       socket.write(`<p data-testid="country">${locationData.country_name}</p>`);
       socket.write(`<p data-testid="company">${locationData.company}</p>`);
       socket.write(`<p data-testid="device">${userAgent}</p>`);
+      socket.write(`<p data-testid="arch">${os.arch()}</p>`);
+      socket.write(`<p data-testid="cpu">${os.cpus()}</p>`);
+      socket.write(`<p data-testid="memory">${os.totalmem() / 1024 / 1024}</p>`);
       socket.write('</body></html>');
       socket.write(endOfResponse);
     });
