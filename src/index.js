@@ -16,6 +16,7 @@ const endOfResponse = '\r\n\r\n';
 
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
+    const gadget = getHeaderValue(data.toString(), 'User-Agent')
     const clientIP = getHeaderValue(data.toString(), 'X-Forwarded-For');
 
     getLocationInfos(clientIP, (locationData) => {
@@ -24,6 +25,8 @@ const server = net.createServer((socket) => {
       socket.write('<title>Trybe 🚀</title></head><body>');
       socket.write('<H1>Explorando os Protocolos 🧐🔎</H1>');
       socket.write('<iframe src="https://giphy.com/embed/l3q2zVr6cu95nF6O4" width="480" height="236" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>');
+      socket.write(`<p data-testid="device">${gadget}<p>`);
+      socket.write(`<p data-testid="ip">${clientIP}<p>`);
       socket.write(`<p data-testid="city">${locationData.city}<p>`);
       socket.write(`<p data-testid="postal_code">${locationData.postal_code}<p>`);
       socket.write(`<p data-testid="region_name">${locationData.region_name}<p>`);
