@@ -37,10 +37,10 @@ const server = net.createServer((socket) => {
         `<p data-testid="postal_code">${locationData.postal_code}<p>`,
       );
       socket.write(
-        `<p data-testid="region_name">${locationData.region_name}<p>`,
+        `<p data-testid="region">${locationData.region_name}<p>`,
       );
       socket.write(
-        `<p data-testid="country_name">${locationData.country_name}<p>`,
+        `<p data-testid="country">${locationData.country_name}<p>`,
       );
       socket.write(`<p data-testid="company">${locationData.company}<p>`);
       socket.write(`<p data-testid="arch">${os.platform()} - ${os.arch()} - ${os.release()}<p>`);
